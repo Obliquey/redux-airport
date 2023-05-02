@@ -15,6 +15,14 @@ const airlines = [
     {
         id:2,
         name: 'Delta'
+    },
+    {
+        id: 3,
+        name: 'Lufthansa'
+    },
+    {
+        id: 4,
+        name: 'Qatar Airways'
     }
     
 ]
@@ -22,6 +30,17 @@ const airlines = [
 /** TODO: Add REDUCERS */
 const airlinesArray = (state=airlines, action) => {
     // need conditional here to ADD airlines to airport manifesto
+    console.log("This is our action:", action)
+    if(action.type === 'ADD_AIRLINE') {
+        const newAirlineName = action.payload;
+        const newAirID = state.length + 1;
+        const newAirline = {
+            id: newAirID,
+            name: newAirlineName
+        }
+
+        return [...state, newAirline]
+    }
     return state;
 }
 
