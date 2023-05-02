@@ -10,6 +10,7 @@ function Table() {
             <tr>
                 <th>Key</th>
                 <th>Airlines</th>
+                <th>Number of Planes</th>
             </tr>
             </thead>
             <tbody>
@@ -18,6 +19,7 @@ function Table() {
                     <tr key={airline.id}>
                         <td>{airline.id}</td>
                         <td>{airline.name}</td>
+                        <td>{airline.planes}</td>
                     </tr>
                 )
             })}
